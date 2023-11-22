@@ -55,7 +55,7 @@ void insert(struct Node *p, int index, int x){
     t->data = x;
     if (index==0){
         t->next = head;
-        head    = t;
+        head = t;
     }
     else{
         for (int i = 0; i < index-1; i++)
