@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int findMax(int arr[], int n){
-    int max=-1;
+    int max=-99999999;
     for (int i = 0; i < n; i++)
     {
         if (arr[i]>max)

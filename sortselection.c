@@ -6,17 +6,18 @@ void swap(int *a, int *b){
     *b=temp;
 }
 void selection(int arr[], int n){
-    int k;
     for (int i = 0; i < n-1; i++)
     {
-        for (int j=k=i; j < n; j++)
+        int min = i;
+        for (int j = i+1; j < n; j++)
         {
-            if (arr[j]<arr[k])
+            if (arr[j] < arr[min])
             {
-                k=j;
+                min = j;
             }
-        }        
-        swap(&arr[i],&arr[k]);            
+        }   
+        if(min!=i)     
+        swap(&arr[i],&arr[min]);            
     }
 }
 void selection_sort(int arr[],int n){
@@ -49,8 +50,8 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    // selection(arr,n);
-    selection_sort( arr,n);
+    selection(arr,n);
+    // selection_sort( arr,n);
     for (int i = 0; i < n; i++)
     {
         printf("%d ",arr[i]);
