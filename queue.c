@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-
-int size=50;
+int size;
 int fr;
 int back=-1;
 bool empty(){
@@ -65,6 +64,7 @@ int main()
   int n, ch;
   printf ("Enter no of elements: \n");
   scanf ("%d", &n);
+  size = n; // Update size to be equal to n
   fr = 0;
   int arr[n], run=0;
   while(run!=4){
@@ -90,82 +90,3 @@ int main()
       }
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-#include <stdio.h>
-
-void insertionSort(int arr[], int n) {
-    for (int i = 1; i < n; i++) {
-        int key = arr[i];
-        int j = i - 1;
-
-        // Move elements of arr[0..i-1], that are greater than key,
-        // to one position ahead of their current position
-        while (j >= 0 && key < arr[j]) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-    }
-}
-
-void relative_Sort(int arr1[], int arr2[], int n1, int n2) {
-    int c = 0;
-
-    // Sort arr1 using Insertion Sort
-    insertionSort(arr1, n1);
-
-    // Find and move elements from arr1 to the beginning based on arr2
-    for (int i = 0; i < n2; i++) {
-        for (int j = 0; j < n1; j++) {
-            if (arr2[i] == arr1[j]) {
-                // Swap elements to move them to the beginning of arr1
-                int temp = arr1[j];
-                for (int k = j; k > c; k--) {
-                    arr1[k] = arr1[k - 1];
-                }
-                arr1[c] = temp;
-                c++;
-            }
-        }
-    }
-}
-
-int main() {
-    int n1, n2;
-
-    printf("Enter no. of elements in A1: \n");
-    scanf("%d", &n1);
-    int arr1[n1];
-    for (int i = 0; i < n1; i++) {
-        scanf("%d", &arr1[i]);
-    }
-
-    printf("Enter no. of elements in A2: \n");
-    scanf("%d", &n2);
-    int arr2[n2];
-    for (int i = 0; i < n2; i++) {
-        scanf("%d", &arr2[i]);
-    }
-
-    relative_Sort(arr1, arr2, n1, n2);
-
-    printf("Sorted array: ");
-    for (int i = 0; i < n1 - 1; i++) {
-        printf("%d, ", arr1[i]);
-    }
-    printf("%d", arr1[n1 - 1]);
-
-    return 0;
-}
-*/
