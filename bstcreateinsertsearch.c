@@ -19,13 +19,11 @@ struct Node* createNode(int key) {
 void Insert(int key) {
     struct Node* t = root;
     struct Node* r=NULL,*p;
-
     if (root == NULL){
         p = createNode(key);
         root = p;
         return;
     }
-
     while(t != NULL){
         r = t;
         if (key < t->data){
@@ -36,7 +34,6 @@ void Insert(int key) {
             return;
         }
     }
-
     p = createNode(key);
 
     if (key < r->data){
