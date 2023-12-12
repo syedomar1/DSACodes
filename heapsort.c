@@ -50,6 +50,5 @@ int main()
     for (i = 1; i <= 7; i++)
         printf("%d ", H[i]);
     printf("\n");
-
     return 0;
 }

@@ -2,7 +2,6 @@
 void insert(int arr[], int i) {
     int temp = arr[i];
     int parent = (i - 1)/2;
-
     while (i > 0 && temp > arr[parent]) {
         arr[i] = arr[parent];
         i = parent;
